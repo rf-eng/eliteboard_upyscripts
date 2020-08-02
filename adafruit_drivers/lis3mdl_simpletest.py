@@ -1,7 +1,7 @@
 import busio
 import adafruit_blinka
 from adafruit_bus_device.i2c_device import I2CDevice
-import lis3mdl
+import adafruit_lis3mdl as lis3mdl
 import time
 from math import atan2, degrees
 
