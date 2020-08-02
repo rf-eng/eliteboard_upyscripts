@@ -1,11 +1,10 @@
 import time
-import board
 import busio
 
 # pylint:disable=no-member,unused-import
 from adafruit_lsm6ds import LSM6DS33, LSM6DSOX, ISM330DHCT, Rate, AccelRange, GyroRange
 
-i2c = busio.I2C(board.SCL, board.SDA)
+i2c = busio.I2C()
 
 # sensor = LSM6DS33(i2c)
 sensor = LSM6DSOX(i2c, address=107)
