@@ -1,8 +1,28 @@
 from machine import I2C
 
 i2c = I2C(2, freq=100000)
-adr = i2c.scan()
-print([hex(adrl<<1) for adrl in adr])
+adr_list = i2c.scan()
+for adr in adr_list:
+    if '0x30' in hex(adr<<1):
+        print('I2C One Wire Bridge at {}/{}'.format(hex(adr<<1), hex(adr)))
+    elif '0x34' in hex(adr<<1):
+        print('Audio Codec at {}/{}'.format(hex(adr<<1), hex(adr)))
+    elif '0x3c' in hex(adr<<1):
+        print('3D Magnetometer at {}/{}'.format(hex(adr<<1), hex(adr)))
+    elif '0x8a' in hex(adr<<1):
+        print('Programmable DC/DC Converter at {}/{}'.format(hex(adr<<1), hex(adr)))
+    elif '0xa0' in hex(adr<<1):
+        print('I2C EEPROM at {}/{}'.format(hex(adr<<1), hex(adr)))
+    elif '0xba' in hex(adr<<1):
+        print('Barometer at {}/{}'.format(hex(adr<<1), hex(adr)))
+    elif '0xbe' in hex(adr<<1):
+        print('Relative Humidity + Temperature at {}/{}'.format(hex(adr<<1), hex(adr)))
+    elif '0xd6' in hex(adr<<1):
+        print('3D Accelerometer + 3D Gyroscope at {}/{}'.format(hex(adr<<1), hex(adr)))
+    else:
+        print('*** Unknown device at {}/{}'.format(hex(adr<<1), hex(adr)))
+
+
 # '0x30' I2C One Wire Bridge
 # '0x34' Audio Codec
 # '0x3c' 3D Magnetometer
