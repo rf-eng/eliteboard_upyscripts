@@ -78,7 +78,7 @@ _LPS22_CTRL_REG2 = 0x11  # Second control register. Includes SW Reset
 
 _LPS2X_DEFAULT_ADDRESS = 0x5D
 _LPS25HB_CHIP_ID = 0xBD
-_LPS22HB_CHIP_ID = 0xB1  # 0xb1 is LPS22 default device id from WHOAMI
+_LPS22HB_CHIP_ID = 0xB3  # 0xb1 is LPS22 default device id from WHOAMI, 0xb3 is delivered by chip on eliteboard
 
 
 class CV:
