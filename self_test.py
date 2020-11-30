@@ -2,6 +2,7 @@ from machine import I2C
 from umachine import Pin
 import time
 import struct
+import binascii
 
 i2c = I2C(2, freq=100000)
 
@@ -106,3 +107,5 @@ print('Press BTN2 to continue')
 while btn2.value() == 1:
     pass
 print('BTN2 ok')
+
+print('UID: 0x{}'.format(binascii.hexlify(machine.unique_id()).decode()))
