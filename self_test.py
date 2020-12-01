@@ -1,5 +1,6 @@
 from machine import I2C
 from umachine import Pin
+import machine
 import time
 import struct
 import binascii
