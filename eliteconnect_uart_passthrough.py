@@ -12,4 +12,5 @@ def pass_through(uart1, uart2):
         if uart2.any():
             uart1.write(uart2.read(1020))
 
-pass_through(uart4, uart7)
+def eliteconnect_pass_through():
+    pass_through(uart4, uart7)
