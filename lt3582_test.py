@@ -3,7 +3,7 @@ import ustruct
 from lt3582 import LT3582
 
 i2c = I2C(2, freq=100000)
-adr = 0b1000101
+adr = 0x31
 
 for reg in range(5):
     print("reg {}:".format(reg))
