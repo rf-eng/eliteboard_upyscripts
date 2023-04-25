@@ -21,7 +21,7 @@ class ESP32_AT:
         eventlist = self.poll.poll(timeout)
         while (len(eventlist)>0) and not(done):
             res_tmp = self.uart.read(1)
-            res += res_tmp.decode()
+            res += res_tmp.decode('ascii', 'ignore')
             if ('OK\r\n' in res) or ('ERROR\r\n' in res):
                 # print('done')
                 done = True
